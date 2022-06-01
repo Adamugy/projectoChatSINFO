@@ -3,11 +3,11 @@
   <display-name>ChatRoomJMS</display-name>
   <servlet>
   	<servlet-name>MyChatRoom</servlet-name>
-  	<servlet-class>Servlet.Loginserv</servlet-class>
+  	<servlet-class>Loginserv</servlet-class>
   </servlet>
   <servlet-mapping>
-  	<servlet-name>MyChatRoom</servlet-name>
-  	<url-pattern>/ChatJMS</url-pattern>
+  	<servlet-name>Loginserv</servlet-name>
+  	<url-pattern>/Loginserv</url-pattern>
   </servlet-mapping>
   
   <welcome-file-list>

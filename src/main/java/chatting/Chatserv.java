@@ -1,17 +1,17 @@
- package mz.co.isutc.si.i42.connect;
+ package chatting;
 
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
 
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import java.util.ArrayList;
+
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
        
 
 
@@ -71,67 +71,37 @@ public class Chatserv extends HttpServlet {
 	        try {
 
 	            Connection conn = factory.createConnection(username, password);
-
 	            Session session = conn.createSession(false, Session.AUTO_ACKNOWLEDGE);
-
 	            MessageProducer prod = session.createProducer(session.createTopic(destination));
-
 	            prod.setDeliveryMode(DeliveryMode.PERSISTENT);
-
 	            conn.start();
-
 	            Message msg = session.createTextMessage("hello");
-
 	            prod.send(msg);
-
 	            conn.close();
-
 	        } catch (JMSException e) {
-
 	            log.info(e.getMessage());
-
 	        }
 
 	    }
 
-	 
-
 	    private void consume() {
 
 	        try {
-
 	            Connection conn = factory.createConnection(username, password);
-
 	            Session session = conn.createSession(false,
-
 	                    Session.AUTO_ACKNOWLEDGE);
-
-	            MessageConsumer cons = session.createConsumer(session
-
-	                    .createTopic(destination));
-
+	            MessageConsumer cons = session.createConsumer(session.createTopic(destination));
 	            conn.start();
-
 	            Message msg = cons.receive(1000);
-
 	            if (msg == null) {
-
 	                log.info("received no message");
-
 	            } else {
-
 	                TextMessage t = (TextMessage) msg;
-
 	                log.info(t.getText());
-
 	            }
-
 	            conn.close();
-
 	        } catch (JMSException e) {
-
 	            e.printStackTrace();
-
 	        }
 
 	    }*/

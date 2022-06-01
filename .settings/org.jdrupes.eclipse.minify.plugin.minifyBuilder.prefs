@@ -1,0 +1,5 @@
+//createMapFile//src/main/webapp/add.js=false
+//includeSource//src/main/webapp/add.js=false
+//minifier//src/main/webapp/add.js=GoogleClosureComiler
+//optWhitespaceOnly//src/main/webapp/add.js=optWhitespaceOnly
+eclipse.preferences.version=1

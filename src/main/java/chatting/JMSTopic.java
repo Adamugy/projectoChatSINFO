@@ -1,4 +1,4 @@
-package mz.co.isutc.si.i42.connect;
+package chatting;
 
 import java.io.BufferedReader;
 import java.io.IOException;

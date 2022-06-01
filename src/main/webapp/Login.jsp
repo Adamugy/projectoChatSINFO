@@ -10,7 +10,7 @@
 <body>
  <div align="Left">
   <h1>ChatRoom login</h1>
-  <form action="<%=request.getContextPath()%>/Loginserv" method="post">
+  <form autocomplete="off" action="<%=request.getContextPath()%>/Loginserv" method="post">
 
     <div class="login">
         <input type="text" placeholder="Username" name="username">  
